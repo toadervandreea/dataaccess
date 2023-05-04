@@ -8,3 +8,10 @@ CREATE TABLE `mydb2023`.`produse` (
     `user_at` INT NOT NULL ,
     `data_adaugare` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+    INSERT INTO `produse` (`id`, `nume_produs`, `descriere`, `pret`, `stoc`, `producator`, `user_at`, `data_adaugare`) VALUES (NULL, 'pix', 'pix albastru de grosime 0.7', '22.5', '10', 'big', '1', CURRENT_TIMESTAMP);
+    SELECT * FROM `produse` 
+    --comentariu
+
+    CREATE USER 'mydb2023'@'localhost'
+    IDENTIFIED VIA mysql_native_password USING '***';GRANT SELECT, INSERT, UPDATE, DELETE, FILE ON *.* TO 'mydb2023'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
