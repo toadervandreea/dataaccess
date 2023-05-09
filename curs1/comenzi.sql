@@ -15,3 +15,14 @@ CREATE TABLE `mydb2023`.`produse` (
 
     CREATE USER 'mydb2023'@'localhost'
     IDENTIFIED VIA mysql_native_password USING '***';GRANT SELECT, INSERT, UPDATE, DELETE, FILE ON *.* TO 'mydb2023'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+
+
+    SELECT COUNT(id_curs) AS nr_cursuri, an FROM cursuri GROUP BY an HAVING nr_cursuri <=5;
+
+SELECT NOW();
+SELECT VERSION();
+SELECT nume, prenume FROM student;
+SELECT titlu_curs FROM cursuri;
+SELECT COUNT(id) AS nr, an FROM student GROUP BY an ;
+SELECT SUM(bursa) FROM student WHERE  an =1 AND bursa IS NOT NULL GROUP  BY an;
+UPDATE student SET status ='bursier' WHERE bursa IS NOT NULL;
